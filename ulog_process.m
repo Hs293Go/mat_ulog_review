@@ -68,25 +68,11 @@ for li = 1:length(log_topics)
     end
 end
 
-%% Convert timestamp to seconds
-f_names = string(fieldnames(log));
-for li = 1:numel(f_names) 
-    if strfind(f_names(li),'timestamp') > 0
-        log.(f_names{li}) = secs(log.(f_names{li}));
-    end
-end
-
 %% Clear temporary variables and plot
 save(mat_file);
+data_process
 standard_graphs
 clear li lj msg field verbose lk log_all headers
-
-function time = secs(timestamp)
-time = zeros(length(timestamp),1);
-    for ti = 1:length(timestamp)
-        time(ti) = 1e-6*(timestamp(ti)-timestamp(1));
-    end
-end
 
 function field = setfield(field, topic)
     field = erase(field, ["[","]"]);

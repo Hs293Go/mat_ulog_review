@@ -1,6 +1,5 @@
 close all
 
-data_process
 %% Attitude    
     figure    
     subplot(3,1,1); 
@@ -81,13 +80,6 @@ data_process
     title('Raw Magnetic Field Strength');
     legend('x','y','z');
     
-function rt = realtime(timestamp)
-rt = zeros(length(timestamp),1);
-    for ti = 1:length(timestamp)
-        rt(ti) = 1e-6*(timestamp(ti)-timestamp(1));
-    end
-end
-
 function u_plot(log, varargin)
     f_names = fieldnames(log);
     t = find(contains(f_names,'timestamp'));
