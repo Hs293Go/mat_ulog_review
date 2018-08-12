@@ -41,9 +41,12 @@ Thumbs.db
 ######################
 *.ulg
 *.px4log
-**/log
-**/csv
 
 #MATLAB data
 ######################
-.mat
+*.mat
+
+#Generated
+######################
+*log*
+*csv*
