@@ -51,7 +51,7 @@ close all
     subplot(3,1,1);
     u_plot(log, 'manual_control_setpoint_x', 'manual_control_setpoint_y', 'manual_control_setpoint_z', 'manual_control_setpoint_r', 'kill_switch');
     title('Stick movement');
-    legend('X', 'Y', 'Z', 'R');
+    legend('Ail', 'Elev', 'Thr', 'Rud');
     
     subplot(3,1,2);
     u_plot(log, 'control0', 'control1', 'control2', 'control3')

@@ -13,12 +13,11 @@ clear all; close all;
 % WARNING2: For each topic imported, include at least one message
 % -------------------------------------------------------------------------
 
-log_name = 'log_41_2018-8-10-19-02-36';     
+log_name = '17_33_08';     
 mat_file= '1.mat';
-log_folder = 'log2_csv';
-log_topics = 'sensor_combined,vehicle_magnetometer,vehicle_rates_setpoint,vehicle_attitude,vehicle_attitude_setpoint,manual_control_setpoint,actuator_controls_0,actuator_outputs';
+log_folder = 'log5_csv';
+log_topics = 'aerobatics_variables,aerobatics_variables2,aerobatics_variables3,vehicle_attitude,vehicle_attitude_setpoint,vehicle_local_position,vehicle_gps_position';
 log_msgs = {
-'all',...
 'all',...
 'all',...
 'all',...
@@ -71,7 +70,8 @@ end
 %% Clear temporary variables and plot
 save(mat_file);
 data_process
-standard_graphs
+%standard_graphs
+AML_graphs
 clear li lj msg field verbose lk log_all headers
 
 function field = setfield(field, topic)
